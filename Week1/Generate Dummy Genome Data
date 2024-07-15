@@ -1,0 +1,54 @@
+> install.packages("tibble")
+> library(Tibble)
+> chromosomes <- c(paste0("chr", 1:22), "chrX", "chrY", "chrM")
+> set.seed(123)
+> lengths <- sample(50000:250000000, length(chromosome), replace = TRUE)
+> genome_data <- tibble(
++     chromosome = chromosomes, 
++     length = lengths
++ )
+> print(genome_data)
+# A tibble: 25 × 2
+   chromosome    length
+   <chr>          <int>
+ 1 chr1       161451294
+ 2 chr2       145991005
+ 3 chr3        12766969
+ 4 chr4       120760261
+ 5 chr5       220936244
+ 6 chr6        83113821
+ 7 chr7       225859048
+ 8 chr8       173713834
+ 9 chr9        66303914
+10 chr10       62485675
+# ℹ 15 more rows
+# ℹ Use `print(n = ...)` to see more rows
+> print(genome_data, n = nrow(genome_data))
+# A tibble: 25 × 2
+   chromosome    length
+   <chr>          <int>
+ 1 chr1       161451294
+ 2 chr2       145991005
+ 3 chr3        12766969
+ 4 chr4       120760261
+ 5 chr5       220936244
+ 6 chr6        83113821
+ 7 chr7       225859048
+ 8 chr8       173713834
+ 9 chr9        66303914
+10 chr10       62485675
+11 chr11       66699736
+12 chr12      131954866
+13 chr13      189291369
+14 chr14      168225017
+15 chr15      109685325
+16 chr16       13864691
+17 chr17      105790880
+18 chr18       36371126
+19 chr19       24444571
+20 chr20       76492143
+21 chr21      166339004
+22 chr22      117892824
+23 chrX       195639961
+24 chrY        68656874
+25 chrM       196883588
