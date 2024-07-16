@@ -7,7 +7,7 @@ library(stringr)
 
 # Define a function to generate the base path for file loading
 script_path <- function(subdir = NULL) {
-  base_path <- "/Git/R/Week3/Day2/test"  # Base path to the directory containing files
+  base_path <- getwd()  # Base path to the directory containing files
   if (!is.null(subdir)) {
     return(file.path(base_path, subdir))  # Append subdir to the base path if there is a subdir
   }
