@@ -49,11 +49,12 @@ ui <- fluidPage(
   DTOutput("file_contents")
 )
 
+
 # Define server logic
 server <- function(input, output, session) {
   # Reactive expression to list all files matching the pattern
   input_files <- reactive({
-    all_files <- list.files(path = script_path(), pattern = "*.t*", recursive = TRUE)  # List all files with .t* pattern
+    all_files <- list.files(path = script_path(), pattern = "\\.txt$|\\.xls$|\\.csv$", recursive = TRUE)  # List all files with .txt or .xls or .csv patterns
     candidates <- character()  # Initialize an empty character vector for candidate files
     for (f in all_files) {
       if (substr(f, 1, 4) == "data" & str_detect(f, "inputs")) {  # Check conditions for the files
