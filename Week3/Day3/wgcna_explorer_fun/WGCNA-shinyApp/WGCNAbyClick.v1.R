@@ -635,9 +635,6 @@ server <- function(input, output, session){
     shinyjs::toggle(id = "Sidebar6")
   })
   
-  script_path <- reactive({
-    getwd()  # Base path to the directory containing files
-  })
   fileAutoloadServer("ExpMat", script_path = script_path())
   
   data <- reactive({
@@ -683,7 +680,7 @@ server <- function(input, output, session){
     input$format
   })
   observe({
-    df <- data()
+    # df <- data()
     if(fmt() == "count" | fmt() == "expected count") {
       updateSelectInput(session, "method1",choices = c(vst = "vst"))
       updateTextInput(session,"RCcut",value = 10)

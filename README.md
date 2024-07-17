@@ -11,7 +11,7 @@
 2. Day2: Practice R via making Shiny app
 3. Day3: Install Docker Image of Shiny app
 
-#Week3
+# Week3
 1. Day1: Understand Auto-load functionality
 2. Day2: Reconstruct Auto-load functionality into Demo shiny app
 3. Day3: Import Auto-load functionality into Explorer shiny app
