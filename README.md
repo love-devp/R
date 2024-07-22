@@ -16,3 +16,8 @@
 2. Day2: Reconstruct Auto-load functionality into Demo shiny app
 3. Day3: Import Auto-load functionality into Explorer shiny app
 4. Day4: Import Auto-load functionality into Explorer shiny app
+
+# Week4
+1. Day1: Import Auto-load functionality into the fixed Explorer shiny app
+2. Day2: 
+3. Day3: 
