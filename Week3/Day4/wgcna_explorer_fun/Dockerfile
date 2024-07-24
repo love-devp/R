@@ -29,7 +29,6 @@ RUN R -e 'install.packages(c("shiny", "BiocManager", "dplyr", "DT", "ggplot2", "
     repos="https://packagemanager.posit.co/cran/__linux__/focal/2024-05-01")'
 RUN R -e "BiocManager::install(version = '3.18', ask=FALSE)"
 RUN R -e "BiocManager::install(c('GO.db', 'WGCNA', 'ComplexHeatmap','edgeR', 'DESeq2'))"
-RUN R -e 'devtools::install_github("ShawnWx2019/WGCNAShinyFun", ref = "master")'
 
 # Copy app directory onto image
 ADD WGCNA-shinyApp /WGCNA-shinyApp/

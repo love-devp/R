@@ -18,6 +18,6 @@
 4. Day4: Import Auto-load functionality into Explorer shiny app
 
 # Week4
-1. Day1: Import Auto-load functionality into the fixed Explorer shiny app
-2. Day2: 
+1. Day1: Check Auto-load functionality on Module-trait tab of Explorer shiny app
+2. Day2: Understand the concept of the each way of analysis, researh Shiny apps of each analysis
 3. Day3: 
