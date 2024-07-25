@@ -20,4 +20,13 @@
 # Week4
 1. Day1: Check Auto-load functionality on Module-trait tab of Explorer shiny app
 2. Day2: Understand the concept of the each way of analysis, researh Shiny apps of each analysis
+3. Day3: Dorkerize each Shiny app module and confirm its a correct module
+
+---
+*anticipated plan*
+# Week5
+1. Day1: Dorkerize each Shiny app module and confirm its a correct module
+2. Day2: Import Auto-load functionality to each dorkerized shiny app
 3. Day3: 
+4. Day4: 
+
