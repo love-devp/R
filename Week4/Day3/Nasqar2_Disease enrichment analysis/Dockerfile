@@ -23,6 +23,7 @@ RUN mamba env create -f environment.yaml
 RUN echo "alias l='ls -lah'" >> ~shiny/.bashrc
 RUN conda init bash
 SHELL ["/bin/bash", "-c"]
+RUN echo "source activate base" >> ~shiny/.bashrc
 RUN echo "conda activate nasqar_env" >> ~shiny/.bashrc
 RUN conda clean --all -y
 

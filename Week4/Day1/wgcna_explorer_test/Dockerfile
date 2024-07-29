@@ -1,5 +1,5 @@
-FROM ubuntu:22.04
-LABEL author="alper@viascientific.com" description="Docker image containing all requirements for the WGCNA explorer App"
+FROM ubuntu:22.04 (jammy)
+LABEL author="woonghee.lee001@umb.edu" description="Docker image containing all requirements for the WGCNA explorer App"
 
 ENV LANG=C.UTF-8 LC_ALL=C.UTF-8
 ENV PATH /opt/conda/bin:$PATH
