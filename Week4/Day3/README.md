@@ -16,3 +16,5 @@ Execution halted
 	- Making Dockerfile (on-going)
 5. Mapping to LINCs → sig2lead_v2.0
 	- Making Dockerfile (on-going)
+6. Feature selection → Shiny Cell
+	- Making Dockerfile (on-going)

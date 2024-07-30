@@ -1,0 +1,31 @@
+● Meeting 10:30 am
+	・ attended members
+		- Alper
+		- Zhaorong
+		- Steve
+		- Zach
+		- Berk
+		- Berkay
+		- Onur
+		- Mustafa
+		- Mark
+	・ Agenda
+		- Task reviews (Progress, issues) : Zhaorong, Steve, Mustafa, Mark, Berkay, Zach, Berk
+		- T-scan: 
+		※ Auto-load function to upload .rds file (matrix from file)
+		- Quit InterCellar shiny app →　Zach had already dealed with this issue.
+		- Extracting the count matrix from Seurat rds file 	looks like the following:
+		```
+		Data=readRDS(“seurat_object.rds”)
+		matrix=as.matrix(Data@assays$RNA@counts)
+		```
+	・ file path has to be 
+		substr(f, 1, 3) != 'run' str_detect(f, 'inputs'))
+		paste0(script_path(), input$automatic_data)
+		
+	・ port number has to be "8789" in Dockerfile
+	
+● Glossary
+.rds file
+
+

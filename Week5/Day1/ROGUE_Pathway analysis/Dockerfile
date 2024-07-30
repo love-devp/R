@@ -25,7 +25,7 @@ RUN R -e "BiocManager::install(c('edgeR', 'fgsea', 'DESeq2'))"
 RUN chown -R shiny:shiny /srv/shiny-server
 
 # Expose the port where the app will be served
-EXPOSE 3838
+EXPOSE 8789
 
 # Run the Shiny app
-CMD ["R", "-e", "shiny::runApp('/srv/shiny-server', port=3838, host='0.0.0.0')"]
+CMD ["R", "-e", "shiny::runApp('/srv/shiny-server', port=8789, host='0.0.0.0')"]

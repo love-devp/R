@@ -28,4 +28,5 @@
 		Warning: Error in library: there is no package called ‘ChemmineOB’
 		52: <Anonymous>
 		Error in library(ChemmineOB) : there is no package called ‘ChemmineOB’
-		
+6. Feature selection → Shiny Cell
+	- Making Dockerfile (on-going)
