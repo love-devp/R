@@ -1,0 +1,16 @@
+● Meeting 10:30 am 08012024
+	・ attended members
+		- Alper
+		- Steve
+		- Zach
+		- Mustafa
+		- Zhaorong
+		- Onur
+		- Mark
+	・ Agenda
+		- Task reviews (Progress, issues) : Zach, Zhaolong, Steve, Mustafa, Onur,  Mark
+		- Customers ask what this app scientifically do to developers, and we can't answer for it.
+		- CondaError: Run 'conda init' before 'conda activate' : I might don't have to use conda for this app. 
+		
+● Glossary
+Single Cell (Analysis?)
