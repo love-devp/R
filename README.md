@@ -23,8 +23,14 @@
 3. Day3: Dorkerize each Shiny app module
 
 # Week5
-1. Day1: Dorkerize each Shiny app module and confirm its a correct module
-2. Day2: Import Auto-load functionality to each dorkerized shiny app
+1. Day1: Dorkerize each Shiny app module
+2. Day2: Dorkerize each Shiny app module
+3. Day3: Dorkerize each Shiny app module
+4. Day4: Dorkerize each Shiny app module and confirm its a correct module (3 completed out of 6)
+
+# Week6
+1. Day1: Dorkerize each Shiny app module (Holomics, Nasqar2, sig2lead_v2.0), import Auto-load functionality to dockerized shiny apps (clusterprofiler, ROGUE, sig2lead_v1.0).
+2. Day2: 
 3. Day3: 
 4. Day4: 
 
