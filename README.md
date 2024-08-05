@@ -29,7 +29,7 @@
 4. Day4: Dorkerize each Shiny app module and confirm its a correct module (3 completed out of 6)
 
 # Week6
-1. Day1: Dorkerize each Shiny app module (Holomics, Nasqar2, sig2lead_v2.0), import Auto-load functionality to dockerized shiny apps (clusterprofiler, ROGUE, sig2lead_v1.0).
+1. Day1: Dorkerize each Shiny app module (Holomics, Nasqar2, sig2lead_v1.0 → sig2lead_v2.0 → sig2lead_v2.2), import Auto-load functionality to dockerized shiny apps (clusterprofiler), Making Enhanced Volcano Plot Shiny app.
 2. Day2: 
 3. Day3: 
 4. Day4: 
