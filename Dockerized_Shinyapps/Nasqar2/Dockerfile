@@ -64,8 +64,6 @@ RUN . /home/shiny/miniconda3/etc/profile.d/conda.sh && conda activate nasqar_env
     R -e "devtools::install_github('cole-trapnell-lab/monocle3')" && \
     R -e "remotes::install_github('satijalab/seurat', 'seurat5', quiet = TRUE)"
 
-RUN conda run -n nasqar_env R -e "BiocManager::install('compbiomed/animalcules')"
-
 USER root
 
 RUN mkdir /opt/nasqar_build
@@ -104,6 +102,13 @@ RUN wget https://github.com/compbiomed/animalcules/archive/a24aced16297b12b92b63
 RUN unzip a24aced16297b12b92b63520b0046ddbae288322.zip 
 RUN mv animalcules-a24aced16297b12b92b63520b0046ddbae288322/inst/shiny animalcules
 RUN sed -i '1 i\library(animalcules)' animalcules/app.R
+
+# Verify the directory exists
+RUN ls -la
+
+# Install animalcules package
+RUN . /home/shiny/miniconda3/etc/profile.d/conda.sh && conda activate nasqar_env && \
+    R CMD INSTALL animalcules-a24aced16297b12b92b63520b0046ddbae288322
 
 COPY shiny-server.conf /etc/shiny-server/shiny-server.conf
 COPY shiny-server.sh /opt/nasqar_build/shiny-server.sh
