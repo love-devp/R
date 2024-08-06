@@ -1,0 +1,17 @@
+● Meeting 10:30 am 08062024
+	・ attended members
+		- Alper
+		- Steve
+		- Zach
+		- Onur
+		- Berkay
+		- Zhaorong
+		- Mark
+	・ Agenda
+		- Task reviews (Progress, issues) : Zach, Steve, Berkay, Mark, Zach
+		- I have done Dockerized Shiny apps that I found on the web 
+		- I have uploaded on my Github(seperate by the folder) and it will push to ViaScientific github by Alper soon
+		- I will make a stand-alone shiny app using enhanced volcanic plot 
+		
+● Glossary
+

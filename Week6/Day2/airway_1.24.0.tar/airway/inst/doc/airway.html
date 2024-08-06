@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>Airway smooth muscle cells</title>
+<style type="text/css">
+/**
+ * Prism.s theme ported from highlight.js's xcode style
+ */
+pre code {
+  padding: 1em;
+}
+.token.comment {
+  color: #007400;
+}
+.token.punctuation {
+  color: #999;
+}
+.token.tag,
+.token.selector {
+  color: #aa0d91;
+}
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol {
+  color: #1c00cf;
+}
+.token.property,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin {
+  color: #c41a16;
+}
+.token.inserted {
+  background-color: #ccffd8;
+}
+.token.deleted {
+  background-color: #ffebe9;
+}
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+  color: #9a6e3a;
+}
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+  color: #836c28;
+}
+.token.function,
+.token.class-name {
+  color: #DD4A68;
+}
+.token.regex,
+.token.important,
+.token.variable {
+  color: #5c2699;
+}
+.token.important,
+.token.bold {
+  font-weight: bold;
+}
+.token.italic {
+  font-style: italic;
+}
+</style>
+<style type="text/css">
+body {
+  font-family: sans-serif;
+  max-width: 800px;
+  margin: auto;
+  padding: 1em;
+  line-height: 1.5;
+  box-sizing: border-box;
+}
+body, .footnotes, code { font-size: .9em; }
+li li { font-size: .95em; }
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+pre, img { max-width: 100%; }
+pre, pre:hover {
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+pre code {
+  display: block;
+  overflow-x: auto;
+}
+code { font-family: 'DejaVu Sans Mono', 'Droid Sans Mono', 'Lucida Console', Consolas, Monaco, monospace; }
+:not(pre) > code, code[class] { background-color: #F8F8F8; }
+code.language-undefined, pre > code:not([class]) {
+  background-color: inherit;
+  border: 1px solid #eee;
+}
+table {
+  margin: auto;
+  border-top: 1px solid #666;
+}
+table thead th { border-bottom: 1px solid #ddd; }
+th, td { padding: 5px; }
+thead, tfoot, tr:nth-child(even) { background: #eee; }
+blockquote {
+  color: #666;
+  margin: 0;
+  padding-left: 1em;
+  border-left: 0.5em solid #eee;
+}
+hr, .footnotes::before { border: 1px dashed #ddd; }
+.frontmatter { text-align: center; }
+#TOC .numbered li { list-style: none; }
+#TOC .numbered { padding-left: 0; }
+#TOC .numbered ul { padding-left: 1em; }
+table, .body h2 { border-bottom: 1px solid #666; }
+.body .appendix, .appendix ~ h2 { border-bottom-style: dashed; }
+.footnote-ref a::before { content: "["; }
+.footnote-ref a::after { content: "]"; }
+section.footnotes::before {
+  content: "";
+  display: block;
+  max-width: 20em;
+}
+
+@media print {
+  body {
+    font-size: 12pt;
+    max-width: 100%;
+  }
+  tr, img { page-break-inside: avoid; }
+}
+@media only screen and (min-width: 992px) {
+  pre { white-space: pre; }
+}
+</style>
+</head>
+<body>
+<div class="frontmatter">
+<div class="title"><h1>Airway smooth muscle cells</h1></div>
+<div class="author"><h2></h2></div>
+<div class="date"><h3></h3></div>
+</div>
+<div class="body">
+<!--
+%\VignetteEngine{knitr::knitr}
+%\VignetteIndexEntry{Airway smooth muscle cells}
+-->
+<h1 id="airway-smooth-muscle-cells">Airway smooth muscle cells</h1>
+<p>Here we provide the code which was used to contruct the
+<em>RangedSummarizedExperiment</em> object of the <em>airway</em> experiment data
+package. The experiment citation is:</p>
+<p>Himes BE, Jiang X, Wagner P, Hu R, Wang Q, Klanderman B, Whitaker RM,
+Duan Q, Lasky-Su J, Nikolos C, Jester W, Johnson M, Panettieri R Jr,
+Tantisira KG, Weiss ST, Lu Q. “RNA-Seq Transcriptome Profiling
+Identifies CRISPLD2 as a Glucocorticoid Responsive Gene that Modulates
+Cytokine Function in Airway Smooth Muscle Cells.” PLoS One. 2014 Jun
+13;9(6):e99625.
+PMID: <a href="http://www.ncbi.nlm.nih.gov/pubmed/24926665">24926665</a>.
+GEO: <a href="http://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE52778">GSE52778</a>.</p>
+<p>From the abstract, a brief description of the RNA-Seq experiment on
+airway smooth muscle (ASM) cell lines: “Using RNA-Seq, a
+high-throughput sequencing method, we characterized transcriptomic
+changes in four primary human ASM cell lines that were treated with
+dexamethasone - a potent synthetic glucocorticoid (1 micromolar for 18
+hours).”</p>
+<p><strong>Note:</strong> in version 1.6, the package was updated to include two
+samples, SRR1039508 and SRR1039509, quantified using Salmon, in order
+to demonstrate the tximport/tximeta Bioconductor packages. For details
+on the quantification steps for these files, consult the airway2
+package: <a href="https://github.com/mikelove/airway2">https://github.com/mikelove/airway2</a>. Another dataset,
+labelled <code>gse</code> was added to the <em>airway</em> package, which contains the
+<em>SummarizedExperiment</em> object obtained after loading quantification
+data for all 8 samples into R/Bioconductor using the <em>tximeta</em>
+package, first running <code>tximeta</code> and then <code>summarizeToGene</code>.</p>
+<h1 id="obtaining-sample-information-from-geo">Obtaining sample information from GEO</h1>
+<p>The following code chunk obtains the sample information from the
+series matrix file downloaded from GEO. The columns are then parsed
+and new columns with shorter names and factor levels are added.</p>
+<pre><code class="language-r">suppressPackageStartupMessages( library( &quot;GEOquery&quot; ) )
+suppressPackageStartupMessages( library( &quot;airway&quot; ) )
+dir &lt;- system.file(&quot;extdata&quot;,package=&quot;airway&quot;)
+geofile &lt;- file.path(dir, &quot;GSE52778_series_matrix.txt&quot;)
+gse &lt;- getGEO(filename=geofile)
+pdata &lt;- pData(gse)[,grepl(&quot;ch1&quot;,names(pData(gse)))]
+names(pdata) &lt;- c(&quot;treatment&quot;,&quot;tissue&quot;,&quot;ercc_mix&quot;,&quot;cell&quot;,&quot;celltype&quot;)
+pdataclean &lt;- data.frame(treatment=sub(&quot;treatment: (.*)&quot;,&quot;\\1&quot;,pdata$treatment),
+                         cell=sub(&quot;cell line: (.*)&quot;,&quot;\\1&quot;,pdata$cell),
+                         row.names=rownames(pdata))
+pdataclean$dex &lt;- ifelse(grepl(&quot;Dex&quot;,pdataclean$treatment),&quot;trt&quot;,&quot;untrt&quot;)
+pdataclean$albut &lt;- ifelse(grepl(&quot;Albut&quot;,pdataclean$treatment),&quot;trt&quot;,&quot;untrt&quot;)
+pdataclean$SampleName &lt;- rownames(pdataclean)
+pdataclean$treatment &lt;- NULL
+</code></pre>
+<p>The information which connects the sample information from GEO with
+the SRA run id is downloaded from
+<a href="http://www.ncbi.nlm.nih.gov/sra/?term=SRP033351">SRA</a> using the
+<strong>Send to: File</strong> button.</p>
+<pre><code class="language-r">srafile &lt;- file.path(dir, &quot;SraRunInfo_SRP033351.csv&quot;)
+srp &lt;- read.csv(srafile)
+srpsmall &lt;- srp[,c(&quot;Run&quot;,&quot;avgLength&quot;,&quot;Experiment&quot;,&quot;Sample&quot;,&quot;BioSample&quot;,&quot;SampleName&quot;)]
+</code></pre>
+<p>These two <em>data.frames</em> are merged and then we subset to only the
+samples not treated with albuterol (these samples were not included in
+the analysis of the publication).</p>
+<pre><code class="language-r">coldata &lt;- merge(pdataclean, srpsmall, by=&quot;SampleName&quot;)
+rownames(coldata) &lt;- coldata$Run
+coldata &lt;- coldata[coldata$albut == &quot;untrt&quot;,]
+coldata$albut &lt;- NULL
+coldata
+</code></pre>
+<pre><code>##            SampleName                                     cell   dex        Run
+## SRR1039508 GSM1275862 tissue: human airway smooth muscle cells untrt SRR1039508
+## SRR1039509 GSM1275863 tissue: human airway smooth muscle cells untrt SRR1039509
+## SRR1039510 GSM1275864 tissue: human airway smooth muscle cells untrt SRR1039510
+## SRR1039511 GSM1275865 tissue: human airway smooth muscle cells untrt SRR1039511
+## SRR1039512 GSM1275866 tissue: human airway smooth muscle cells untrt SRR1039512
+## SRR1039513 GSM1275867 tissue: human airway smooth muscle cells untrt SRR1039513
+## SRR1039514 GSM1275868 tissue: human airway smooth muscle cells untrt SRR1039514
+## SRR1039515 GSM1275869 tissue: human airway smooth muscle cells untrt SRR1039515
+## SRR1039516 GSM1275870 tissue: human airway smooth muscle cells untrt SRR1039516
+## SRR1039517 GSM1275871 tissue: human airway smooth muscle cells untrt SRR1039517
+## SRR1039518 GSM1275872 tissue: human airway smooth muscle cells untrt SRR1039518
+## SRR1039519 GSM1275873 tissue: human airway smooth muscle cells untrt SRR1039519
+## SRR1039520 GSM1275874 tissue: human airway smooth muscle cells untrt SRR1039520
+## SRR1039521 GSM1275875 tissue: human airway smooth muscle cells untrt SRR1039521
+## SRR1039522 GSM1275876 tissue: human airway smooth muscle cells untrt SRR1039522
+## SRR1039523 GSM1275877 tissue: human airway smooth muscle cells untrt SRR1039523
+##            avgLength Experiment    Sample    BioSample
+## SRR1039508       126  SRX384345 SRS508568 SAMN02422669
+## SRR1039509       126  SRX384346 SRS508567 SAMN02422675
+## SRR1039510       126  SRX384347 SRS508570 SAMN02422668
+## SRR1039511       126  SRX384348 SRS508569 SAMN02422667
+## SRR1039512       126  SRX384349 SRS508571 SAMN02422678
+## SRR1039513        87  SRX384350 SRS508572 SAMN02422670
+## SRR1039514       126  SRX384351 SRS508574 SAMN02422681
+## SRR1039515       114  SRX384352 SRS508573 SAMN02422671
+## SRR1039516       120  SRX384353 SRS508575 SAMN02422682
+## SRR1039517       126  SRX384354 SRS508576 SAMN02422673
+## SRR1039518       126  SRX384355 SRS508578 SAMN02422679
+## SRR1039519       107  SRX384356 SRS508577 SAMN02422672
+## SRR1039520       101  SRX384357 SRS508579 SAMN02422683
+## SRR1039521        98  SRX384358 SRS508580 SAMN02422677
+## SRR1039522       125  SRX384359 SRS508582 SAMN02422680
+## SRR1039523       126  SRX384360 SRS508581 SAMN02422674
+</code></pre>
+<p>Finally, the sample table was saved to a CSV file for future
+reference. This file is included in the <code>inst/extdata</code> directory of
+this package.</p>
+<pre><code class="language-r">write.csv(coldata, file=&quot;sample_table.csv&quot;)
+</code></pre>
+<h1 id="downloading-fastq-files-from-sra">Downloading FASTQ files from SRA</h1>
+<p>A file containing the SRA run numbers was created: <code>files</code>. This
+file was used to download the sequenced reads from the SRA using
+<code>wget</code>. The following command was used to extract the FASTQ file from
+the <code>.sra</code> files, using the
+<a href="http://www.ncbi.nlm.nih.gov/books/NBK47540/">SRA Toolkit</a></p>
+<pre><code>cat files | parallel -j 7 fastq-dump --split-files {}.sra
+</code></pre>
+<h1 id="aligning-reads">Aligning reads</h1>
+<p>The reads were aligned using the
+<a href="https://code.google.com/p/rna-star/">STAR read aligner</a>
+to GRCh37 using the annotations from Ensembl release 75.</p>
+<pre><code>for f in `cat files`; do STAR --genomeDir ../STAR/ENSEMBL.homo_sapiens.release-75 \
+--readFilesIn fastq/$f\_1.fastq fastq/$f\_2.fastq \
+--runThreadN 12 --outFileNamePrefix aligned/$f.; done
+</code></pre>
+<p><a href="http://samtools.sourceforge.net/">SAMtools</a> was used to generate BAM files.</p>
+<pre><code>cat files | parallel -j 7 samtools view -bS aligned/{}.Aligned.out.sam -o aligned/{}.bam
+</code></pre>
+<h1 id="counting-reads">Counting reads</h1>
+<p>A transcript database for the homo sapiens Ensembl genes was obtained
+from Biomart.</p>
+<pre><code class="language-r">library( &quot;GenomicFeatures&quot; )
+txdb &lt;- makeTranscriptDbFromBiomart( biomart=&quot;ensembl&quot;, dataset=&quot;hsapiens_gene_ensembl&quot;)
+exonsByGene &lt;- exonsBy( txdb, by=&quot;gene&quot; )
+</code></pre>
+<p>The BAM files were specified using the <code>SRR</code> id from the SRA. A yield
+size of 2 million reads was used to cap the memory used during
+read counting.</p>
+<pre><code class="language-r">sampleTable &lt;- read.csv( &quot;sample_table.csv&quot;, row.names=1 )
+fls &lt;- file.path(&quot;aligned&quot;,rownames(sampleTable), &quot;.bam&quot;)
+library( &quot;Rsamtools&quot; )
+bamLst &lt;- BamFileList( fls, yieldSize=2000000 )
+</code></pre>
+<p>The following <code>summarizeOverlaps</code> call distributed the 8 paired-end
+BAM files to 8 workers. This used a maximum of 16 Gb per worker and
+the time elapsed was 50 minutes.</p>
+<pre><code class="language-r">library( &quot;BiocParallel&quot; )
+register( MulticoreParam( workers=8 ) )
+library( &quot;GenomicAlignments&quot; )
+airway &lt;- summarizeOverlaps( features=exonsByGene, reads=bamLst,
+                            mode=&quot;Union&quot;, singleEnd=FALSE,
+                            ignore.strand=TRUE, fragments=TRUE )
+</code></pre>
+<p>The sample information was then added as column data.</p>
+<pre><code class="language-r">colData(airway) &lt;- DataFrame( sampleTable )
+</code></pre>
+<p>Finally, we attached the <code>MIAME</code> information using the Pubmed ID.</p>
+<pre><code class="language-r">library( &quot;annotate&quot; )
+miame &lt;- list(pmid2MIAME(&quot;24926665&quot;))
+miame[[1]]@url &lt;- &quot;http://www.ncbi.nlm.nih.gov/pubmed/24926665&quot;
+# because R's CHECK doesn't like non-ASCII characters in data objects
+# or in vignettes. the actual char was used in the first argument
+miame[[1]]@abstract &lt;- gsub(&quot;micro&quot;,&quot;micro&quot;,abstract(miame[[1]]))
+miame[[1]]@abstract &lt;- gsub(&quot;beta&quot;,&quot;beta&quot;,abstract(miame[[1]]))
+metadata(airway) &lt;- miame
+save(airway, file=&quot;airway.RData&quot;)
+</code></pre>
+<h1 id="information-on-the-rangedsummarizedexperiment">Information on the RangedSummarizedExperiment</h1>
+<p>Below we print out some basic summary statistics on the <code>airway</code>
+object which is provided by this experiment data package.</p>
+<pre><code class="language-r">library(&quot;airway&quot;)
+data(airway)
+airway
+</code></pre>
+<pre><code>## class: RangedSummarizedExperiment 
+## dim: 63677 8 
+## metadata(1): ''
+## assays(1): counts
+## rownames(63677): ENSG00000000003 ENSG00000000005 ... ENSG00000273492
+##   ENSG00000273493
+## rowData names(10): gene_id gene_name ... seq_coord_system symbol
+## colnames(8): SRR1039508 SRR1039509 ... SRR1039520 SRR1039521
+## colData names(9): SampleName cell ... Sample BioSample
+</code></pre>
+<pre><code class="language-r">as.data.frame(colData(airway))
+</code></pre>
+<pre><code>##            SampleName    cell   dex albut        Run avgLength Experiment
+## SRR1039508 GSM1275862  N61311 untrt untrt SRR1039508       126  SRX384345
+## SRR1039509 GSM1275863  N61311   trt untrt SRR1039509       126  SRX384346
+## SRR1039512 GSM1275866 N052611 untrt untrt SRR1039512       126  SRX384349
+## SRR1039513 GSM1275867 N052611   trt untrt SRR1039513        87  SRX384350
+## SRR1039516 GSM1275870 N080611 untrt untrt SRR1039516       120  SRX384353
+## SRR1039517 GSM1275871 N080611   trt untrt SRR1039517       126  SRX384354
+## SRR1039520 GSM1275874 N061011 untrt untrt SRR1039520       101  SRX384357
+## SRR1039521 GSM1275875 N061011   trt untrt SRR1039521        98  SRX384358
+##               Sample    BioSample
+## SRR1039508 SRS508568 SAMN02422669
+## SRR1039509 SRS508567 SAMN02422675
+## SRR1039512 SRS508571 SAMN02422678
+## SRR1039513 SRS508572 SAMN02422670
+## SRR1039516 SRS508575 SAMN02422682
+## SRR1039517 SRS508576 SAMN02422673
+## SRR1039520 SRS508579 SAMN02422683
+## SRR1039521 SRS508580 SAMN02422677
+</code></pre>
+<pre><code class="language-r">summary(colSums(assay(airway))/1e6)
+</code></pre>
+<pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##   15.16   19.05   20.90   21.94   24.67   30.82
+</code></pre>
+<pre><code class="language-r">metadata(rowRanges(airway))
+</code></pre>
+<pre><code>## $genomeInfo
+## $genomeInfo$`Db type`
+## [1] &quot;TranscriptDb&quot;
+## 
+## $genomeInfo$`Supporting package`
+## [1] &quot;GenomicFeatures&quot;
+## 
+## $genomeInfo$`Data source`
+## [1] &quot;BioMart&quot;
+## 
+## $genomeInfo$Organism
+## [1] &quot;Homo sapiens&quot;
+## 
+## $genomeInfo$`Resource URL`
+## [1] &quot;www.biomart.org:80&quot;
+## 
+## $genomeInfo$`BioMart database`
+## [1] &quot;ensembl&quot;
+## 
+## $genomeInfo$`BioMart database version`
+## [1] &quot;ENSEMBL GENES 75 (SANGER UK)&quot;
+## 
+## $genomeInfo$`BioMart dataset`
+## [1] &quot;hsapiens_gene_ensembl&quot;
+## 
+## $genomeInfo$`BioMart dataset description`
+## [1] &quot;Homo sapiens genes (GRCh37.p13)&quot;
+## 
+## $genomeInfo$`BioMart dataset version`
+## [1] &quot;GRCh37.p13&quot;
+## 
+## $genomeInfo$`Full dataset`
+## [1] &quot;yes&quot;
+## 
+## $genomeInfo$`miRBase build ID`
+## [1] NA
+## 
+## $genomeInfo$transcript_nrow
+## [1] &quot;215647&quot;
+## 
+## $genomeInfo$exon_nrow
+## [1] &quot;745593&quot;
+## 
+## $genomeInfo$cds_nrow
+## [1] &quot;537555&quot;
+## 
+## $genomeInfo$`Db created by`
+## [1] &quot;GenomicFeatures package from Bioconductor&quot;
+## 
+## $genomeInfo$`Creation time`
+## [1] &quot;2014-07-10 14:55:55 -0400 (Thu, 10 Jul 2014)&quot;
+## 
+## $genomeInfo$`GenomicFeatures version at creation time`
+## [1] &quot;1.17.9&quot;
+## 
+## $genomeInfo$`RSQLite version at creation time`
+## [1] &quot;0.11.4&quot;
+## 
+## $genomeInfo$DBSCHEMAVERSION
+## [1] &quot;1.0&quot;
+</code></pre>
+<h1 id="information-on-the-genes">Information on the genes</h1>
+<p>In January 2023, information was added to the <code>rowData</code>:</p>
+<pre><code class="language-r">rowData(airway)
+</code></pre>
+<pre><code>## DataFrame with 63677 rows and 10 columns
+##                         gene_id     gene_name  entrezid   gene_biotype
+##                     &lt;character&gt;   &lt;character&gt; &lt;integer&gt;    &lt;character&gt;
+## ENSG00000000003 ENSG00000000003        TSPAN6        NA protein_coding
+## ENSG00000000005 ENSG00000000005          TNMD        NA protein_coding
+## ENSG00000000419 ENSG00000000419          DPM1        NA protein_coding
+## ENSG00000000457 ENSG00000000457         SCYL3        NA protein_coding
+## ENSG00000000460 ENSG00000000460      C1orf112        NA protein_coding
+## ...                         ...           ...       ...            ...
+## ENSG00000273489 ENSG00000273489 RP11-180C16.1        NA      antisense
+## ENSG00000273490 ENSG00000273490        TSEN34        NA protein_coding
+## ENSG00000273491 ENSG00000273491  RP11-138A9.2        NA        lincRNA
+## ENSG00000273492 ENSG00000273492    AP000230.1        NA        lincRNA
+## ENSG00000273493 ENSG00000273493  RP11-80H18.4        NA        lincRNA
+##                 gene_seq_start gene_seq_end              seq_name seq_strand
+##                      &lt;integer&gt;    &lt;integer&gt;           &lt;character&gt;  &lt;integer&gt;
+## ENSG00000000003       99883667     99894988                     X         -1
+## ENSG00000000005       99839799     99854882                     X          1
+## ENSG00000000419       49551404     49575092                    20         -1
+## ENSG00000000457      169818772    169863408                     1         -1
+## ENSG00000000460      169631245    169823221                     1          1
+## ...                        ...          ...                   ...        ...
+## ENSG00000273489      131178723    131182453                     7         -1
+## ENSG00000273490       54693789     54697585 HSCHR19LRC_LRC_J_CTG1          1
+## ENSG00000273491      130600118    130603315          HG1308_PATCH          1
+## ENSG00000273492       27543189     27589700                    21          1
+## ENSG00000273493       58315692     58315845                     3          1
+##                 seq_coord_system        symbol
+##                        &lt;integer&gt;   &lt;character&gt;
+## ENSG00000000003               NA        TSPAN6
+## ENSG00000000005               NA          TNMD
+## ENSG00000000419               NA          DPM1
+## ENSG00000000457               NA         SCYL3
+## ENSG00000000460               NA      C1orf112
+## ...                          ...           ...
+## ENSG00000273489               NA RP11-180C16.1
+## ENSG00000273490               NA        TSEN34
+## ENSG00000273491               NA  RP11-138A9.2
+## ENSG00000273492               NA    AP000230.1
+## ENSG00000273493               NA  RP11-80H18.4
+</code></pre>
+<p>This was generated with the following (un-evaluated) code chunk:</p>
+<pre><code class="language-r">library(AnnotationHub)
+ah &lt;- AnnotationHub()
+Gtf &lt;- query(ah, c(&quot;Homo sapiens&quot;, &quot;release-75&quot;))[1]
+library(ensembldb)
+DbFile &lt;- ensDbFromAH(Gtf)
+edb &lt;- EnsDb(DbFile)
+g &lt;- genes(edb, return.type=&quot;DataFrame&quot;)
+rownames(g) &lt;- g$gene_id
+rowData(airway) &lt;- g[rownames(airway),]
+</code></pre>
+<h1 id="session-information">Session information</h1>
+<pre><code class="language-r">sessionInfo()
+</code></pre>
+<pre><code>## R version 4.4.0 beta (2024-04-15 r86425)
+## Platform: x86_64-pc-linux-gnu
+## Running under: Ubuntu 22.04.4 LTS
+## 
+## Matrix products: default
+## BLAS:   /home/biocbuild/bbs-3.19-bioc/R/lib/libRblas.so 
+## LAPACK: /usr/lib/x86_64-linux-gnu/lapack/liblapack.so.3.10.0
+## 
+## locale:
+##  [1] LC_CTYPE=en_US.UTF-8       LC_NUMERIC=C              
+##  [3] LC_TIME=en_GB              LC_COLLATE=C              
+##  [5] LC_MONETARY=en_US.UTF-8    LC_MESSAGES=en_US.UTF-8   
+##  [7] LC_PAPER=en_US.UTF-8       LC_NAME=C                 
+##  [9] LC_ADDRESS=C               LC_TELEPHONE=C            
+## [11] LC_MEASUREMENT=en_US.UTF-8 LC_IDENTIFICATION=C       
+## 
+## time zone: America/New_York
+## tzcode source: system (glibc)
+## 
+## attached base packages:
+## [1] stats4    stats     graphics  grDevices utils     datasets  methods  
+## [8] base     
+## 
+## other attached packages:
+##  [1] airway_1.24.0               SummarizedExperiment_1.34.0
+##  [3] GenomicRanges_1.56.0        GenomeInfoDb_1.40.0        
+##  [5] IRanges_2.38.0              S4Vectors_0.42.0           
+##  [7] MatrixGenerics_1.16.0       matrixStats_1.3.0          
+##  [9] GEOquery_2.72.0             Biobase_2.64.0             
+## [11] BiocGenerics_0.50.0        
+## 
+## loaded via a namespace (and not attached):
+##  [1] utf8_1.2.4              generics_0.1.3          tidyr_1.3.1            
+##  [4] SparseArray_1.4.0       xml2_1.3.6              lattice_0.22-6         
+##  [7] hms_1.1.3               magrittr_2.0.3          evaluate_0.23          
+## [10] grid_4.4.0              R.oo_1.26.0             jsonlite_1.8.8         
+## [13] Matrix_1.7-0            R.utils_2.12.3          limma_3.60.0           
+## [16] httr_1.4.7              purrr_1.0.2             fansi_1.0.6            
+## [19] UCSC.utils_1.0.0        abind_1.4-5             cli_3.6.2              
+## [22] rlang_1.1.3             crayon_1.5.2            XVector_0.44.0         
+## [25] R.methodsS3_1.8.2       withr_3.0.0             DelayedArray_0.30.0    
+## [28] S4Arrays_1.4.0          tools_4.4.0             tzdb_0.4.0             
+## [31] dplyr_1.1.4             GenomeInfoDbData_1.2.12 curl_5.2.1             
+## [34] vctrs_0.6.5             R6_2.5.1                lifecycle_1.0.4        
+## [37] zlibbioc_1.50.0         pkgconfig_2.0.3         pillar_1.9.0           
+## [40] data.table_1.15.4       glue_1.7.0              statmod_1.5.0          
+## [43] xfun_0.43               tibble_3.2.1            tidyselect_1.2.1       
+## [46] knitr_1.46              readr_2.1.5             compiler_4.4.0
+</code></pre>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js" defer></script>
+</body>
+</html>
