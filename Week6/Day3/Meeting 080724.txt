@@ -1,0 +1,35 @@
+● Meeting 10:30 am 08072024
+	・ attended members
+		- Alper
+		- Steve
+		- Zach
+		- Onur
+		- Zhaorong
+		- Mark
+	・ Agenda
+		- Task reviews (Progress, issues) : Mark, Zach, Steve, Zhaorong, Onur
+		- I have been making a stand-alone shiny app of Enhanced Volcano Plot.
+		- Made a testing module by following the introduction of their github page
+		- Working well, but I want to know what is the necessary condition for the data structure to make Enhanced Volcano Plot
+		※ Do not Use "DESeq2" and "res"
+		※ I can start from the dataset Zach sent me
+		※ Resources from Zach
+			-https://github.com/ViaScientific/gsea-explorer
+			-https://github.com/ViaScientific/pca-explorer
+			-https://github.com/ViaScientific/network-explorer
+			-https://github.com/ViaScientific/fold-change-explorer
+		※ Additional information for Zach
+			- In general a volcano plot should be:
+				X axis: Fold Change (but log2 of Fold Change)
+				Y axis: Significance (padj which stands for adjusted p-value). It needs to be the -log10 transformation
+				An MA plot should be:
+				X axis: Expression (you can use the baseMean column, typically people show log10 transfomration)
+				Y axis: Fold Change (log2 transformed)
+				To do the y-axis for the volcano plot, I use this layer in ggplot:
+				scale_y_continuous(trans=c("log10", "reverse"), name='Significance', labels=trans_format('log10',math_format(10^.x))) +
+				This transforms the axis into log10 space, then reverses it (which is essentially what the minus part of -log10 is doing) 
+				The labels= part is telling it to show the results with scientific notation
+				For the data file I shared with you, the fold change is already in log2 space, so no transformation is necessary
+
+● Glossary
+

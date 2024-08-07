@@ -7,7 +7,7 @@ if (!requireNamespace("AnnotationDbi", quietly = TRUE))
   BiocManager::install("AnnotationDbi")
 if (!requireNamespace("org.Hs.eg.db", quietly = TRUE))
   BiocManager::install("org.Hs.eg.db")
-
+ 
 source("./R/EnhancedVolcano.R")
 
 # Load necessary libraries
@@ -57,6 +57,7 @@ server <- function(input, output) {
   dds <- DESeq(dds, betaPrior = FALSE)
   res <- results(dds, contrast = c("dex", "trt", "untrt"))
   res <- lfcShrink(dds, contrast = c("dex", "trt", "untrt"), res = res, type = "normal")
+  print(res)
   
   output$volcanoPlot1 <- renderPlot({
     # Render the volcano plot
