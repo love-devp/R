@@ -1,0 +1,18 @@
+● Meeting 10:30 am 08122024
+	・ Attended members
+		- Alper
+		- Steve
+		- Zach
+		- Mustafa
+		- Onur
+		- Mark
+	・ Agenda
+		- Task reviews (Progress, issues) : Mark, Mustafa, Steve, Zach, Onur
+	・ New Tasks
+		※ Add Download-Graph function
+		※ Update and Check GEA explorer
+		※ Change Numbers to Gene Names
+		※ Find out "Copy&Paste" function is availble or not in the text box of Shiny app 
+
+● Glossary
+

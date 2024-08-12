@@ -34,3 +34,7 @@
 3. Day3: Making Enhanced Volcano Plot Shiny app based on fold-change-explorer.
 4. Day4: Making Enhanced Volcano Plot Shiny app based on fold-change-explorer.
 
+# Week7
+1. Day1: Making Enhanced Volcano Plot Shiny app based on fold-change-explorer (Download function).
+
+

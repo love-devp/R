@@ -1,0 +1,9 @@
+・Useful Website (For Docker)
+https://packagemanager.posit.co/cran/__linux__/focal/2021-08-02
+https://packagemanager.posit.co/bioconductor
+
+・Useful command (Powershell)
+Get-ChildItem .\* | Select-String -Pattern "STR"
+
+TNFAIP3, TNF, loc1578, IL1B
+TNFAIP3 TNF loc1578 IL1B
