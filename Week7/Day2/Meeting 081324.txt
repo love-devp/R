@@ -1,0 +1,20 @@
+● Meeting 10:30 am 08132024
+	・ Attended members
+		- Alper
+		- Steve
+		- Zach
+		- Zhaorong
+		- Berkay
+		- Onur
+		- Mark
+	・ Agenda
+		- Task reviews (Progress, issues) : Berkay, Mark, Steve, Zhaorong, Onur, Zach
+		- Review of current task 
+			1. Add Download-Graph function
+			2. Add Gene Label
+			3. Add Copy&Paste Functionality
+			4. Sinc with Label Option
+
+
+● Glossary
+
