@@ -1,0 +1,18 @@
+● Meeting 10:30 am 08142024
+	・ Attended members
+		- Zach
+		- Zhaorong
+		- Mustafa
+		- Mark
+	・ Agenda
+		- Task reviews (Progress, issues) : Berkay, Mark, Steve, Zhaorong, Onur, Zach
+		- Review of current task 
+			1. Sinc with size options but colors
+		※New task
+		- Add color pick panel
+		- Add checkbox for gene count function
+		- Fix Axix Option sinc (hline)
+
+
+● Glossary
+

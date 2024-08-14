@@ -37,7 +37,7 @@
 # Week7
  - Day1: Making Enhanced Volcano Plot Shiny app based on fold-change-explorer (Download function, Gene Label, Copy&Paste, Sinc with Label Option).
  - Day2: Making Enhanced Volcano Plot Shiny app based on fold-change-explorer (Sinc with Point Options, Axix Options).
- - Day3:
+ - Day3: Making Enhanced Volcano Plot Shiny app based on fold-change-explorer (Sinc with Color Option, Add additional functions).
  - Day4:
 
 # Week8
