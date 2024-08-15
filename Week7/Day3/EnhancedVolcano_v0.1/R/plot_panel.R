@@ -1,3 +1,4 @@
+# Load Enhanced volcano.R from local directory
 source('./R/Enhancedvolcano.R')
 
 
@@ -12,9 +13,12 @@ plotUI <- function(id) {
     accordion(open=FALSE,
               accordion_panel('Label Options',
                               selectizeInput(ns('label_strategy'), 'Event Labels:', choices = c('None', 'Significant/Highlighted', 'Highlighted Only'), selected='None'),
-                              selectizeInput(ns('highlighted'), 'Highlighted Events:', choices=NULL, multiple=TRUE, options = list(create = TRUE, delimiter = ',')), # Add Copy&Paste option
+                              # Drop down menu for Highlighted data,enabled Copy&Paste option, separated by comma
+                              selectizeInput(ns('highlighted'), 'Highlighted Events:', choices=NULL, multiple=TRUE, options = list(create = TRUE, delimiter = ',')),
                               numericInput(ns('label_size'), 'Label Size:', value=4), 
-                              selectizeInput(ns('legend_position'), 'Legend Position', choices = c('top', 'bottom', 'right', 'left', 'invisible')),
+                              # Drop down menu for legend position, default value is None
+                              selectizeInput(ns('legend_position'), 'Legend Position', choices = c('top', 'bottom', 'right', 'left', 'none'), selected = 'none'),
+                              # 3 Check boxes for Data counting 
                               checkboxInput(ns('upregulated_check'), 'Upregulated Count', value = FALSE), 
                               checkboxInput(ns('downregulated_check'), 'Downregulated Count', value = FALSE),
                               checkboxInput(ns('noChange_check'), 'No Change Count', value = FALSE)
@@ -55,11 +59,11 @@ plotUI <- function(id) {
                               )
               ),
               accordion_panel('Axis Options',
-                              checkboxInput(ns('include_zero_line'), 'Zero Line', value=FALSE),
+                              checkboxInput(ns('include_zero_line'), 'Zero Line', value=TRUE),
                               colourInput(ns('zero_line_color'), 'Color', value='#000000'),
-                              checkboxInput(ns('include_fc_line'), 'Fold Change Cutoff Line', value=FALSE),
+                              checkboxInput(ns('include_fc_line'), 'Fold Change Cutoff Line', value=TRUE),
                               colourInput(ns('fc_line_color'), 'Color', value='#e7e7e7'),
-                              checkboxInput(ns('include_sig_line'), 'Significance Cutoff Line', value=FALSE),
+                              checkboxInput(ns('include_sig_line'), 'Significance Cutoff Line', value=TRUE),
                               colourInput(ns('sig_line_color'), 'Color', value='#e7e7e7')
               )
     )
@@ -149,6 +153,7 @@ plotServer <- function(id, data, event_column, fold_change_column, significance_
       noChange_count = nrow(df() %>% filter(Direction == 'No Change'))
       downregulated_count = nrow(df() %>% filter(Direction == 'Downregulated'))
       
+      # Render Enhanced Volcano Plot
       EnhancedVolcano(
         toptable = df(),
         lab = df()$Label,
@@ -157,7 +162,7 @@ plotServer <- function(id, data, event_column, fold_change_column, significance_
         title = NULL,
         subtitle = NULL,
         caption = NULL,
-        legendPosition = if (input$legend_position == 'invisible') 'none' else input$legend_position,
+        legendPosition = input$legend_position,
         pCutoff = significance_threshold(),
         pCutoffCol = significance_column(),
         FCcutoff = fold_change_threshold(),
@@ -185,11 +190,17 @@ plotServer <- function(id, data, event_column, fold_change_column, significance_
     
     ma_plot = reactive({
       
+      upregulated_count = nrow(df() %>% filter(Direction == 'Upregulated'))
+      noChange_count = nrow(df() %>% filter(Direction == 'No Change'))
+      downregulated_count = nrow(df() %>% filter(Direction == 'Downregulated'))
+      
       if (expression_column() != '' & fold_change_column() != '') {
         return(
           ggplot(df(), aes(x=!!sym(expression_column()), y=!!sym(fold_change_column()), color=Direction, size=Direction, alpha=Direction, label=Label)) +
             theme_classic(base_size = 16) +
-            theme(legend.position = 'none') +
+            theme(legend.title=element_blank()) +
+            theme(legend.text=element_text(size = 15)) +
+            theme(legend.position = input$legend_position) +
             scale_x_continuous(trans='log10', name='Expression') +
             scale_y_continuous(name='Fold Change (log2)') +
             scale_color_manual(values=colors()) +
@@ -199,7 +210,10 @@ plotServer <- function(id, data, event_column, fold_change_column, significance_
             {if (input$include_fc_line) geom_hline(yintercept = fold_change_threshold(), linetype=2, color=input$fc_line_color)} +
             {if (input$include_zero_line) geom_hline(yintercept = 0, linetype=2, color=input$zero_line_color)} +
             {if (input$include_fc_line) geom_hline(yintercept = -fold_change_threshold(), linetype=2, color=input$fc_line_color)} +
-            {if (input$label_strategy != 'None') geom_label_repel(label.size=NA, size=input$label_size, fill=NA, na.rm=TRUE, max.overlaps = 50, max.time = 5)}
+            {if (input$label_strategy != 'None') geom_label_repel(label.size=NA, size=input$label_size, fill=NA, na.rm=TRUE, max.overlaps = 50, max.time = 5)} +
+            {if (input$upregulated_check) annotate('text', x=Inf, y=Inf, hjust=1, vjust=1, color=input$upregulated_color, label=paste0('Upregulated: ', upregulated_count))} +
+            {if (input$downregulated_check) annotate('text', x=0, y=Inf, hjust=-.01, vjust=1, color=input$downregulated_color, label=paste0('Downregulated: ', downregulated_count))} +
+            {if (input$noChange_check) annotate('text', x=1000, y=Inf, vjust=1, color=input$noChange_color, label=paste0('No Change: ', noChange_count))}
         )
       } else {
         return(NULL)
