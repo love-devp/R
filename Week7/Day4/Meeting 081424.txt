@@ -1,0 +1,20 @@
+● Meeting 10:30 am 08142024
+	・ Attended members
+		- Zach
+		- Onur
+		- Mustafa
+		- Steve
+		- Mark
+	・ Agenda
+		- Task reviews (Progress, issues) : Mustafa, Steve, Mark, Zach, Onur
+		- Review of current task 
+			1. Sinc with Color Option, Axix Option
+			2. Add Colour Picker functionality
+			3. Add checkbox for gene count option
+			4. Add legend position option
+			
+		※New task
+		- 
+
+● Glossary
+
