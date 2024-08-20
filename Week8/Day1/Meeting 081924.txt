@@ -1,0 +1,24 @@
+● Meeting 10:30 am 08142024
+	・ Attended members
+		- Alper
+		- Zach
+		- Onur
+		- Mustafa
+		- Steve
+		- Mark
+	・ Agenda
+		- Task reviews (Progress, issues) : APler, Mark, Mustafa, Steve, Zach, Onur
+		- Review of current task 
+			1. Sinc with Color Option, Axix Option
+			2. Add Colour Picker functionality
+			3. Add checkbox for gene count option
+			4. Add legend position option
+			
+		※New task
+		- 1. Nasqar2 - Gene Count Manager - app_proxy : Check the error log
+		- 2. sig2lead_v2 - app_proxy : Check the error log
+
+
+
+● Glossary
+

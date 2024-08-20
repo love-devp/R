@@ -41,10 +41,8 @@
  - Day4: Dockerizing Napari
 
 # Week8
- - Day1: 
+ - Day1: Maintaining Sig2lead(resolved), Nasqar2(on-going). Modurize Enhanced Volcano Plot Shiny app
  - Day2: 
- - Day3: 
- - Day4:
 
 # Week9
  - Day1: 
