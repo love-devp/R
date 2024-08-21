@@ -6,7 +6,7 @@
 ##Solution
 1. Modified DE_page.R
 	- ``` output$volcano = evolPlotServer('volvano_plot', data, event_column, fold_change_column, significance_column, significance_threshold, fold_change_threshold)
-    ``` *→* ``` evol_plot_data <- evolPlotServer('volcano', data, data$event_column, data$fold_change_column, data$significance_column, significance$significance, significance$fold_change)
+    ``` → ``` evol_plot_data <- evolPlotServer('volcano', data, data$event_column, data$fold_change_column, data$significance_column, significance$significance, significance$fold_change)
     
     output$volcano <- renderPlot({
       evol_plot_data$e_volcano_plot()
