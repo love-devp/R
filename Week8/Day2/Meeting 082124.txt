@@ -1,0 +1,22 @@
+● Meeting 10:30 am 08212024
+	・ Attended members
+		- Alper
+		- Zach
+		- Onur
+		- Mustafa
+		- Steve
+		- Zhaolong
+		- Mark
+	・ Agenda
+		- Task reviews (Progress, issues) : Zach, Steve, Zhaolong, Mark, Mustafa, Onur
+		- Review of current task 
+			1. Sig2lead launching error issue fixed -- upload in the demo in Via Foundry
+			2. Nasqar2 error: URL overwrite---js issue. Since I am not familer js well, making docker module for each shiny app could be the alternative solution
+			3. Modulize Enhanced Volcano Plot based on Zach's pca plot
+			
+		※New task
+		- 1. 
+
+
+● Glossary
+

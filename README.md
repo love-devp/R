@@ -42,7 +42,7 @@
 
 # Week8
  - Day1: Maintaining Sig2lead(resolved), Nasqar2(on-going). Modurize Enhanced Volcano Plot Shiny app
- - Day2: 
+ - Day2: Maintaining Nasqar2(on-going). Modurize Enhanced Volcano Plot Shiny app
 
 # Week9
  - Day1: 
