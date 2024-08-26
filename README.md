@@ -42,10 +42,10 @@
 
 # Week8
  - Day1: Maintaining Sig2lead(resolved), Nasqar2(on-going). Modurize Enhanced Volcano Plot Shiny app
- - Day2: Maintaining Nasqar2(on-going). Modurize Enhanced Volcano Plot Shiny app
+ - Day2: Maintaining Nasqar2(on-going), Modurize Enhanced Volcano Plot Shiny app
 
 # Week9
- - Day1: 
+ - Day1: Maintaining Nasqar2(on-going), Making new modulized enhanced volcano shiny app, Making basic TCGA app to load data.
  - Day2: 
  - Day3: 
  - Day4: Last Day

@@ -1,0 +1,26 @@
+{
+    "id": "A3A93DC2",
+    "path": "C:/Git/R/Week3/Day1/debrowser-master/tests/test-demo.R",
+    "project_path": "tests/test-demo.R",
+    "type": "r_source",
+    "hash": "4170291392",
+    "contents": "",
+    "dirty": false,
+    "created": 1721062916601.0,
+    "source_on_save": false,
+    "relative_order": 2,
+    "properties": {
+        "source_window_id": "",
+        "Source": "Source",
+        "cursorPosition": "8,36",
+        "scrollLine": "0"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1707149733,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1707149733,
+    "read_only": false,
+    "read_only_alternatives": []
+}

@@ -1,0 +1,26 @@
+{
+    "id": "278DA756",
+    "path": "C:/Git/R/Week3/Day2/wgcna_explorer_fun/WGCNA-shinyApp/WGCNAbyClick.v1.R",
+    "project_path": "WGCNAbyClick.v1.R",
+    "type": "r_source",
+    "hash": "3106551635",
+    "contents": "",
+    "dirty": false,
+    "created": 1721154556827.0,
+    "source_on_save": false,
+    "relative_order": 1,
+    "properties": {
+        "source_window_id": "",
+        "Source": "Source",
+        "cursorPosition": "72,34",
+        "scrollLine": "83"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1721157481,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1721157481824,
+    "read_only": false,
+    "read_only_alternatives": []
+}
