@@ -1,15 +1,28 @@
-source('./R/Enhancedvolcano.R')
-
 evolPlotUI <- function(id) {
   ns <- NS(id)
   tagList(
+    layout_sidebar(
+      sidebar= sidebar(
+        accordion(open='Data',
+                  accordion_panel("Species", icon=icon('dog'),
+                                  inputSpeciesUI(ns('input_species'))
+                  ),
+                  accordion_panel("Data", icon=icon('file'),
+                                  inputDataUI(ns('input_data'))
+                  )
+        )
+      )
+    ),
     card_body(
       plotOutput(ns('e_volcano_plot')) %>% withSpinner(image='spinner.gif', id=ns('spinner'))
       )
   )}
 
-evolPlotServer <- function(id, data, event_column, fold_change_column, significance_column, significance_threshold, fold_change_threshold) {
+evolPlotServer <- function(id, data, script_path, event_column, fold_change_column, significance_column, significance_threshold, fold_change_threshold) {
   moduleServer(id, function(input, output, session) {
+    
+    species = inputSpeciesServer('input_species')
+    data = inputDataServer('input_data', script_path, species)
 
     df = reactive({
       data() %>%
