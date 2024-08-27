@@ -1,21 +1,23 @@
+# app.R
 library(shiny)
 library(shinyjs)
+library(dplyr)
+library(shinycssloaders)
 library(colourpicker)
-source('./R/Enhancedvolcano.R')
-source('./R/page.R')
+library(bslib)
 
-ui <- navbarPage(
-  title = 'Enhanced Volcano Plot Explorer', 
-  id = 'nav_id',
-  tabPanel('Plot', PageUI('page'))
-)
+
+ui <- function(id) {
+  fluidPage(
+    titlePanel('Volcano Plot App'),
+    PageUI('page_ui')  # Call the PageUI function defined in page.R
+  )
+}
 
 server <- function(input, output, session) {
-  script_path <- reactive({
-    "/home/rstudio"
-  })
-  
-  PageServer('page', script_path)
+
+  # # Call the PageServer function
+  PageServer('page_ui')
 }
 
 options(shiny.host = '0.0.0.0', shiny.port = 8789, shiny.maxRequestSize = 30*1024^2)

@@ -1,20 +1,14 @@
+# page.R
+
 PageUI <- function(id) {
   ns <- NS(id)
-  tagList(
-    navbarPage(
-      title = "Volcano Plot",
-      tabPanel('Plot',
-               plotOutput(ns('e_volcano_plot')) %>% withSpinner(image = 'spinner.gif')
-      )
+    nav_panel(
+      'Volcano Plot',
+      evolPlotUI(ns('e_volcano_plot'))  # Call the volcano plot UI inside a tabPanel
     )
-  )
 }
 
-PageServer <- function(id, script_path){
+PageServer <- function(id, script_path) {
   moduleServer(id, function(input, output, session) {
-    
-    output$e_volcano_plot <- renderPlot({
-      plots$e_volcano_plot()
-    })
   })
 }
