@@ -1,0 +1,22 @@
+● Meeting 10:30 am 08272024
+	・ Attended members
+		- Steve
+		- Zhaolong
+		- Alper
+		- Zach
+		- Onur
+		- Mustafa
+		- Mark
+		- Cham
+	・ Agenda
+		- Task reviews (Progress, issues) : Steve, Zhaolong, Mark, Onur, Mustafa
+		- Review of current task 
+			1. Nasqar2 : Fixed by Tony (index.html) Wokring in the Via Foundry now
+			2. TCGA : Error in as.vector: no method for coercing this S4 class to a vector
+			3. Enhanced Volcano App : Start to make a new shiny app to pursue the perfect modulization
+			
+		※New task
+		- TCGA : Upload current file to Github so Cham can take my task.
+
+● Glossary
+
