@@ -47,7 +47,7 @@
 # Week9
  - Day1: Maintaining Nasqar2(on-going), Making new modulized enhanced volcano shiny app, Making basic TCGA app to load data.
  - Day2: Maintaining Nasqar2(on-going), Making new modulized enhanced volcano shiny app, Making basic TCGA app to load data.
- - Day3: 
+ - Day3: Making new modulized enhanced volcano shiny app
  - Day4: Last Day
 
 
