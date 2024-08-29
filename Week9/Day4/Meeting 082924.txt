@@ -1,0 +1,19 @@
+● Meeting 10:30 am 08292024
+	・ Attended members
+		- Steve
+		- Zhaolong
+		- Alper
+		- Zach
+		- Onur
+		- Mark
+		- Cham
+	・ Agenda
+		- Task reviews (Progress, issues) : Cham, Zach, Steve, Zhaolong, Mark, Onur, Mustafa
+		- Review of current task 
+			1. Enhanced Volcano App : Facing some errors with data inputs
+			
+		※New task
+		- TCGA : Upload current file to Github so Cham can take my task.
+
+● Glossary
+
